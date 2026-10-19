@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://glb-shrink.pages.dev/sitemap.xml

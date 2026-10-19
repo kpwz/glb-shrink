@@ -1,0 +1,7 @@
+# GLB Shrink — Cloudflare Workers 静态资产部署配置
+name = "glb-shrink"
+compatibility_date = "2026-10-18"
+
+# 纯静态站点：直接托管 dist 目录（含 wasm，完整上传）
+[assets]
+directory = "./dist"

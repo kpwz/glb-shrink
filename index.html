@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GLB Shrink — Free Online GLB Compressor | Compress 3D Models</title>
+    <meta name="description" content="Compress GLB 3D models online with Draco mesh compression and WebP textures. Shrink file size up to 99%, compare before/after in 3D, batch-process up to 20 models. Works with Three.js, Unity, Unreal and Godot." />
+    <meta name="keywords" content="GLB compressor, compress GLB online, reduce GLB file size, Draco compression, glTF compression, 3D model optimizer, GLB to Draco, WebP textures" />
+    <link rel="canonical" href="https://glb-shrink.pages.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="GLB Shrink" />
+    <meta property="og:title" content="GLB Shrink — Free Online GLB Compressor" />
+    <meta property="og:description" content="Drag in a .glb model and shrink it up to 99% with Draco + WebP. Compare quality side by side, batch-process up to 20 files." />
+    <meta property="og:url" content="https://glb-shrink.pages.dev/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="GLB Shrink — Free Online GLB Compressor" />
+    <meta name="twitter:description" content="Compress GLB 3D models online. Draco + WebP, up to 99% smaller. Compare in 3D, batch up to 20 files." />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "GLB Shrink",
+        "url": "https://glb-shrink.pages.dev/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any (web browser)",
+        "description": "Free online GLB 3D model compressor using Draco mesh compression and WebP texture conversion.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+          "Draco geometry compression",
+          "WebP texture conversion",
+          "Side-by-side 3D quality comparison",
+          "Batch compression of up to 20 models"
+        ]
+      }
+    </script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="hero" id="hero" hidden>
+        <div class="hero-inner">
+          <div class="hero-label" id="hero-label" data-i18n="hero.labelSize">File size</div>
+          <div class="hero-sizes">
+            <span class="size-before" id="size-before">—</span>
+            <span class="hero-arrow" aria-hidden="true">→</span>
+            <span class="size-after" id="size-after">—</span>
+          </div>
+          <div class="hero-badge" id="savings-badge">—</div>
+          <div class="hero-sub" id="hero-sub"></div>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="panel">
+          <div class="brand">
+            <div class="brand-mark">◆</div>
+            <div>
+              <h1>GLB Shrink</h1>
+              <p data-i18n="brand.tagline">Draco + WebP compression for real-time 3D</p>
+            </div>
+            <div class="lang-switch" role="group" aria-label="Language">
+              <button type="button" class="lang-btn" data-lang="en">EN</button>
+              <button type="button" class="lang-btn" data-lang="zh">中文</button>
+            </div>
+          </div>
+
+          <div class="mode-tabs" role="tablist" aria-label="Work mode">
+            <button type="button" class="mode-tab active" data-mode="compress" role="tab" data-i18n="tab.compress">Compress</button>
+            <button type="button" class="mode-tab" data-mode="compare" role="tab" data-i18n="tab.compare">Compare</button>
+            <button type="button" class="mode-tab" data-mode="batch" role="tab" data-i18n="tab.batch">Batch</button>
+          </div>
+
+          <div id="compress-panel">
+          <label class="dropzone" id="dropzone" for="file-input" tabindex="0" role="button" data-i18n-aria="drop.title">
+            <input type="file" id="file-input" accept=".glb" hidden />
+            <div class="dropzone-icon">⬆</div>
+            <p class="dropzone-title" data-i18n="drop.title">Drop your GLB model here</p>
+            <p class="dropzone-hint" data-i18n="drop.hint">or click to choose · up to 200 MB</p>
+          </label>
+
+          <div class="file-meta" id="file-meta" hidden>
+            <span class="file-name" id="file-name"></span>
+            <span class="file-tris" id="file-tris"></span>
+          </div>
+
+          <section class="controls" id="controls" hidden>
+            <div class="quality-section">
+              <p class="quality-question" data-i18n="quality.question">How much do you want to compress?</p>
+              <div class="preset-cards" id="preset-cards" role="radiogroup" aria-label="Compression quality">
+                <button type="button" class="preset-card" data-quality="0">
+                  <span class="preset-icon">📦</span>
+                  <span class="preset-label" data-i18n="preset.min">Smallest</span>
+                  <span class="preset-hint" data-i18n="preset.minHint">For background props</span>
+                </button>
+                <button type="button" class="preset-card active" data-quality="50">
+                  <span class="preset-icon">⚖️</span>
+                  <span class="preset-label" data-i18n="preset.balanced">Balanced</span>
+                  <span class="preset-hint" data-i18n="preset.balancedHint">Best for most projects</span>
+                </button>
+                <button type="button" class="preset-card" data-quality="100">
+                  <span class="preset-icon">✨</span>
+                  <span class="preset-label" data-i18n="preset.max">Max detail</span>
+                  <span class="preset-hint" data-i18n="preset.maxHint">For close-up viewing</span>
+                </button>
+              </div>
+
+              <label class="field tune-field">
+                <div class="tune-labels">
+                  <span data-i18n="tune.left">Smaller file</span>
+                  <span data-i18n="tune.right">More detail</span>
+                </div>
+                <input type="range" id="quality" min="0" max="100" step="1" value="50" />
+                <p class="quality-hint" id="quality-hint"></p>
+              </label>
+            </div>
+
+            <button class="btn-primary" id="compress-btn">
+              <span class="btn-label" data-i18n="btn.compress">Compress model</span>
+              <span class="btn-spinner" hidden></span>
+            </button>
+
+            <button class="btn-secondary" id="download-btn" hidden data-i18n="btn.download">
+              Download compressed GLB
+            </button>
+          </section>
+          </div>
+
+          <section class="compare-panel" id="compare-panel" hidden>
+            <p class="compare-intro" data-i18n="compare.intro">Drop two models below. Drag either viewer — the other follows with the same angle and scale.</p>
+            <div class="compare-uploads">
+              <label class="dropzone compare-drop" id="dropzone-a" for="file-a" tabindex="0" role="button" data-i18n-aria="compare.dropA">
+                <input type="file" id="file-a" accept=".glb" hidden />
+                <span class="drop-tag">A</span>
+                <div>
+                  <p class="dropzone-title" data-i18n="compare.dropA">Model A</p>
+                </div>
+              </label>
+              <label class="dropzone compare-drop" id="dropzone-b" for="file-b" tabindex="0" role="button" data-i18n-aria="compare.dropB">
+                <input type="file" id="file-b" accept=".glb" hidden />
+                <span class="drop-tag">B</span>
+                <div>
+                  <p class="dropzone-title" data-i18n="compare.dropB">Model B</p>
+                </div>
+              </label>
+            </div>
+            <div class="compare-stats">
+              <div class="stat-card" id="stat-card-a">
+                <div class="stat-title"><span class="drop-tag small">A</span><span data-i18n="compare.dropA">Model A</span></div>
+                <div class="stat-name" id="stat-name-a">—</div>
+                <div class="stat-rows" id="stat-rows-a"></div>
+              </div>
+              <div class="stat-card" id="stat-card-b">
+                <div class="stat-title"><span class="drop-tag small">B</span><span data-i18n="compare.dropB">Model B</span></div>
+                <div class="stat-name" id="stat-name-b">—</div>
+                <div class="stat-rows" id="stat-rows-b"></div>
+              </div>
+            </div>
+            <button class="btn-secondary" id="reset-view-btn" hidden data-i18n="compare.reset">Reset view</button>
+          </section>
+
+          <section class="batch-panel" id="batch-panel" hidden>
+            <label class="dropzone" id="batch-dropzone" for="batch-input" tabindex="0" role="button" data-i18n-aria="batch.dropTitle">
+              <input type="file" id="batch-input" accept=".glb" multiple hidden />
+              <div class="dropzone-icon">⬆</div>
+              <p class="dropzone-title" data-i18n="batch.dropTitle">Drop multiple GLB models here</p>
+              <p class="dropzone-hint" data-i18n="batch.dropHint">or click to select · up to 20 files · 200 MB each</p>
+            </label>
+
+            <section class="quality-section">
+              <p class="quality-question" data-i18n="quality.question">How much do you want to compress?</p>
+              <div class="preset-cards" id="batch-preset-cards" role="radiogroup" aria-label="Compression quality">
+                <button type="button" class="preset-card" data-quality="0">
+                  <span class="preset-icon">📦</span>
+                  <span class="preset-label" data-i18n="preset.min">Smallest</span>
+                  <span class="preset-hint" data-i18n="preset.minHint">For background props</span>
+                </button>
+                <button type="button" class="preset-card active" data-quality="50">
+                  <span class="preset-icon">⚖️</span>
+                  <span class="preset-label" data-i18n="preset.balanced">Balanced</span>
+                  <span class="preset-hint" data-i18n="preset.balancedHint">Best for most projects</span>
+                </button>
+                <button type="button" class="preset-card" data-quality="100">
+                  <span class="preset-icon">✨</span>
+                  <span class="preset-label" data-i18n="preset.max">Max detail</span>
+                  <span class="preset-hint" data-i18n="preset.maxHint">For close-up viewing</span>
+                </button>
+              </div>
+            </section>
+
+            <label class="field tune-field">
+              <div class="tune-labels">
+                <span data-i18n="tune.left">Smaller file</span>
+                <span data-i18n="tune.right">More detail</span>
+              </div>
+              <input type="range" id="batch-quality" min="0" max="100" step="1" value="50" />
+              <p class="quality-hint" id="batch-quality-hint"></p>
+            </label>
+
+            <button class="btn-primary" id="batch-start-btn" disabled>
+              <span class="btn-label" data-i18n="batch.start">Start batch compression</span>
+              <span class="btn-spinner" hidden></span>
+            </button>
+
+            <div class="batch-list" id="batch-list"></div>
+
+            <button class="btn-secondary" id="batch-download-btn" hidden data-i18n="batch.download">
+              Download all (ZIP)
+            </button>
+          </section>
+
+          <footer class="panel-footer">
+            <span data-i18n="footer.supports">Works with Three.js · Unity · Unreal · Godot</span>
+          </footer>
+        </aside>
+
+        <section class="viewers">
+          <div class="viewer-card">
+            <div class="viewer-header">
+              <span class="viewer-tag before" id="tag-before" data-i18n="tag.before">Before</span>
+              <span class="viewer-stat" id="before-stat">—</span>
+            </div>
+            <canvas id="canvas-before" aria-label="Original model preview"></canvas>
+            <div class="viewer-hint" data-i18n="viewer.hint">Drag to rotate · Ctrl + scroll to zoom</div>
+            <div class="viewer-empty" id="empty-before">
+              <span id="empty-before-text" data-i18n="empty.before">Original model</span>
+            </div>
+          </div>
+
+          <div class="viewer-divider" aria-hidden="true"></div>
+
+          <div class="viewer-card">
+            <div class="viewer-header">
+              <span class="viewer-tag after" id="tag-after" data-i18n="tag.after">After</span>
+              <span class="viewer-stat" id="after-stat">—</span>
+            </div>
+            <canvas id="canvas-after" aria-label="Compressed model preview"></canvas>
+            <div class="viewer-hint" data-i18n="viewer.hint">Drag to rotate · Ctrl + scroll to zoom</div>
+            <div class="viewer-empty" id="empty-after">
+              <span id="empty-after-text" data-i18n="empty.after">Compressed preview</span>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section class="seo-section" id="seo-section">
+        <div class="seo-inner">
+          <h2 data-i18n="seo.what.title">What is GLB Shrink?</h2>
+          <p data-i18n="seo.what.body">GLB Shrink is a free online GLB compressor…</p>
+
+          <h2 data-i18n="seo.how.title">How to compress a GLB file</h2>
+          <ol class="seo-steps">
+            <li data-i18n="seo.step1">Drop your .glb model into the compressor.</li>
+            <li data-i18n="seo.step2">Pick a quality level.</li>
+            <li data-i18n="seo.step3">Compare before / after, then download.</li>
+          </ol>
+
+          <h2 data-i18n="seo.feat.title">Features</h2>
+          <ul class="seo-features">
+            <li data-i18n="seo.feat1">Draco geometry compression</li>
+            <li data-i18n="seo.feat2">WebP texture conversion</li>
+            <li data-i18n="seo.feat3">Side-by-side 3D preview</li>
+            <li data-i18n="seo.feat4">Batch compression</li>
+          </ul>
+
+          <h2 data-i18n="seo.faq.title">FAQ</h2>
+          <div class="seo-faq">
+            <details>
+              <summary data-i18n="seo.faq1.q">Is GLB Shrink free to use?</summary>
+              <p data-i18n="seo.faq1.a">Yes…</p>
+            </details>
+            <details>
+              <summary data-i18n="seo.faq2.q">Does compression reduce 3D model quality?</summary>
+              <p data-i18n="seo.faq2.a">You choose…</p>
+            </details>
+            <details>
+              <summary data-i18n="seo.faq3.q">Are my 3D files uploaded to a server?</summary>
+              <p data-i18n="seo.faq3.a">Files are processed…</p>
+            </details>
+            <details>
+              <summary data-i18n="seo.faq4.q">What formats does GLB Shrink support?</summary>
+              <p data-i18n="seo.faq4.a">Input: .glb…</p>
+            </details>
+            <details>
+              <summary data-i18n="seo.faq5.q">Can I compress multiple GLB files at once?</summary>
+              <p data-i18n="seo.faq5.a">Yes. The Batch tab…</p>
+            </details>
+          </div>
+
+          <div class="seo-copyright">© <span id="seo-year"></span> GLB Shrink</div>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
