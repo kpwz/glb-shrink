@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://glb-shrink.pages.dev/sitemap.xml
+Sitemap: https://glb-shrink.q2497237260.workers.dev/sitemap.xml
