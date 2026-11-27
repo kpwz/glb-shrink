@@ -143,6 +143,11 @@ body {
   align-items: center;
 }
 
+/* 品牌文字块允许收缩换行，把空间让给右侧语言按钮，避免语言名被挤成多行 */
+.brand > div:nth-child(2) {
+  min-width: 0;
+}
+
 .brand-mark {
   width: 40px;
   height: 40px;
@@ -168,39 +173,125 @@ body {
   color: var(--muted);
 }
 
-/* ── Language switch ── */
+/* ── Language switch（地球图标 + 下拉菜单）── */
 .lang-switch {
+  position: relative;
   margin-left: auto;
   align-self: flex-start;
+  flex-shrink: 0;
+}
+
+.lang-trigger {
   display: flex;
-  gap: 2px;
-  padding: 2px;
-  background: var(--panel-2);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-
-.lang-btn {
-  border: none;
-  background: transparent;
-  padding: 4px 9px;
-  border-radius: 6px;
-  font: inherit;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--muted);
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.lang-btn:hover {
-  color: var(--text);
-}
-
-.lang-btn.active {
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
   background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  color: var(--text);
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#lang-current {
+  white-space: nowrap;
+}
+
+.lang-trigger:hover {
+  border-color: var(--accent);
   color: var(--accent);
-  box-shadow: var(--shadow-sm);
+}
+
+.lang-globe {
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.lang-trigger:hover .lang-globe {
+  color: var(--accent);
+}
+
+.lang-caret {
+  color: var(--muted);
+  transition: transform 0.2s ease;
+}
+
+.lang-trigger[aria-expanded='true'] .lang-caret {
+  transform: rotate(180deg);
+}
+
+.lang-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 152px;
+  margin: 0;
+  padding: 5px;
+  list-style: none;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.12);
+  /* 用 display 切换保证任何环境下都能可靠显示；入场动画只做锦上添花（即使不播放也可见） */
+  display: none;
+  z-index: 30;
+}
+
+.lang-menu.open {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  animation: lang-menu-in 0.18s ease;
+}
+
+@keyframes lang-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lang-option {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.lang-option:hover {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+.lang-option.active {
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.lang-option.active::after {
+  content: '✓';
+  float: right;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 /* ── Dropzone ── */

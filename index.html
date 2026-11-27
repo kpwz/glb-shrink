@@ -62,9 +62,25 @@
               <h1>GLB Shrink</h1>
               <p data-i18n="brand.tagline">Draco + WebP compression for real-time 3D</p>
             </div>
-            <div class="lang-switch" role="group" aria-label="Language">
-              <button type="button" class="lang-btn" data-lang="en">EN</button>
-              <button type="button" class="lang-btn" data-lang="zh">中文</button>
+            <div class="lang-switch" id="lang-switch">
+              <button type="button" class="lang-trigger" id="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+                <svg class="lang-globe" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <circle cx="12" cy="12" r="9" />
+                  <ellipse cx="12" cy="12" rx="4" ry="9" />
+                  <path d="M3.5 9h17M3.5 15h17" />
+                </svg>
+                <span id="lang-current">English</span>
+                <svg class="lang-caret" viewBox="0 0 24 24" width="12" height="12" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+              <ul class="lang-menu" id="lang-menu" role="listbox" aria-label="Language">
+                <li><button type="button" class="lang-option" role="option" aria-selected="true" data-lang="en">English</button></li>
+                <li><button type="button" class="lang-option" role="option" aria-selected="false" data-lang="zh-CN">简体中文</button></li>
+                <li><button type="button" class="lang-option" role="option" aria-selected="false" data-lang="zh-TW">繁體中文</button></li>
+                <li><button type="button" class="lang-option" role="option" aria-selected="false" data-lang="ja">日本語</button></li>
+                <li><button type="button" class="lang-option" role="option" aria-selected="false" data-lang="ko">한국어</button></li>
+              </ul>
             </div>
           </div>
 

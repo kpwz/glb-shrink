@@ -1,0 +1,695 @@
+{
+  "brand.tagline": {
+    "en": "Draco + WebP compression for real-time 3D",
+    "zh-CN": "Draco + WebP 压缩，专为实时 3D 场景优化",
+    "zh-TW": "Draco + WebP 壓縮，專為即時 3D 場景最佳化",
+    "ja": "リアルタイム 3D 向けの Draco + WebP 圧縮",
+    "ko": "실시간 3D를 위한 Draco + WebP 압축"
+  },
+  "tab.compress": {
+    "en": "Compress",
+    "zh-CN": "单模型压缩",
+    "zh-TW": "單模型壓縮",
+    "ja": "単体圧縮",
+    "ko": "단일 압축"
+  },
+  "tab.compare": {
+    "en": "Compare",
+    "zh-CN": "双模型对比",
+    "zh-TW": "雙模型對比",
+    "ja": "モデル比較",
+    "ko": "모델 비교"
+  },
+  "tab.batch": {
+    "en": "Batch",
+    "zh-CN": "批量压缩",
+    "zh-TW": "批次壓縮",
+    "ja": "一括圧縮",
+    "ko": "일괄 압축"
+  },
+  "drop.title": {
+    "en": "Drop your GLB model here",
+    "zh-CN": "把 GLB 模型拖到这里",
+    "zh-TW": "將 GLB 模型拖曳到這裡",
+    "ja": "GLB モデルをここにドロップ",
+    "ko": "GLB 모델을 여기에 드롭하세요"
+  },
+  "drop.hint": {
+    "en": "or click to choose · up to 200 MB",
+    "zh-CN": "或点击选择文件 · 最大支持 200 MB",
+    "zh-TW": "或點擊選擇檔案 · 最大支援 200 MB",
+    "ja": "またはクリックして選択 · 最大 200 MB",
+    "ko": "또는 클릭하여 선택 · 최대 200 MB"
+  },
+  "quality.question": {
+    "en": "How much do you want to compress?",
+    "zh-CN": "希望压缩到什么程度？",
+    "zh-TW": "希望壓縮到什麼程度？",
+    "ja": "どの程度まで圧縮しますか？",
+    "ko": "어느 정도까지 압축할까요?"
+  },
+  "preset.min": {
+    "en": "Smallest",
+    "zh-CN": "最小体积",
+    "zh-TW": "最小體積",
+    "ja": "最小サイズ",
+    "ko": "최소 용량"
+  },
+  "preset.minHint": {
+    "en": "For background props",
+    "zh-CN": "适合远景背景物",
+    "zh-TW": "適合遠景背景物",
+    "ja": "遠景の背景向け",
+    "ko": "배경 오브젝트용"
+  },
+  "preset.balanced": {
+    "en": "Balanced",
+    "zh-CN": "均衡模式",
+    "zh-TW": "均衡模式",
+    "ja": "バランス",
+    "ko": "균형"
+  },
+  "preset.balancedHint": {
+    "en": "Best for most projects",
+    "zh-CN": "适合大多数场景",
+    "zh-TW": "適合大多數場景",
+    "ja": "ほとんどのプロジェクトに最適",
+    "ko": "대부분의 프로젝트에 최적"
+  },
+  "preset.max": {
+    "en": "Max detail",
+    "zh-CN": "高保真",
+    "zh-TW": "高保真",
+    "ja": "高精細",
+    "ko": "최고 화질"
+  },
+  "preset.maxHint": {
+    "en": "For close-up viewing",
+    "zh-CN": "适合近距离特写",
+    "zh-TW": "適合近距離特寫",
+    "ja": "クローズアップ向け",
+    "ko": "근거리 감상용"
+  },
+  "tune.left": {
+    "en": "Smaller file",
+    "zh-CN": "更小体积",
+    "zh-TW": "更小體積",
+    "ja": "ファイルを小さく",
+    "ko": "파일 크기 작게"
+  },
+  "tune.right": {
+    "en": "More detail",
+    "zh-CN": "更清晰细节",
+    "zh-TW": "更清晰細節",
+    "ja": "ディテール優先",
+    "ko": "디테일 우선"
+  },
+  "btn.compress": {
+    "en": "Compress model",
+    "zh-CN": "开始压缩",
+    "zh-TW": "開始壓縮",
+    "ja": "モデルを圧縮",
+    "ko": "모델 압축하기"
+  },
+  "btn.compressing": {
+    "en": "Compressing…",
+    "zh-CN": "正在压缩…",
+    "zh-TW": "正在壓縮…",
+    "ja": "圧縮中…",
+    "ko": "압축 중…"
+  },
+  "btn.download": {
+    "en": "Download compressed GLB",
+    "zh-CN": "下载压缩后的 GLB 模型",
+    "zh-TW": "下載壓縮後的 GLB 模型",
+    "ja": "圧縮済み GLB をダウンロード",
+    "ko": "압축된 GLB 다운로드"
+  },
+  "hero.labelSize": {
+    "en": "File size",
+    "zh-CN": "文件大小对比",
+    "zh-TW": "檔案大小對比",
+    "ja": "ファイルサイズ",
+    "ko": "파일 크기"
+  },
+  "hero.labelModels": {
+    "en": "Model size",
+    "zh-CN": "模型大小对比",
+    "zh-TW": "模型大小對比",
+    "ja": "モデルサイズ",
+    "ko": "모델 크기"
+  },
+  "hero.ready": {
+    "en": "Ready to compress",
+    "zh-CN": "可以开始压缩",
+    "zh-TW": "可以開始壓縮",
+    "ja": "圧縮の準備完了",
+    "ko": "압축 준비 완료"
+  },
+  "hero.pickQuality": {
+    "en": "Choose quality and hit Compress",
+    "zh-CN": "选择质量后点击开始压缩",
+    "zh-TW": "選擇品質後點擊開始壓縮",
+    "ja": "品質を選んで「圧縮」をクリック",
+    "ko": "품질을 선택하고 압축을 누르세요"
+  },
+  "hero.pipeline": {
+    "en": "Draco geometry + WebP textures",
+    "zh-CN": "Draco 几何 + WebP 贴图",
+    "zh-TW": "Draco 幾何 + WebP 貼圖",
+    "ja": "Draco ジオメトリ + WebP テクスチャ",
+    "ko": "Draco 지오메트리 + WebP 텍스처"
+  },
+  "savings": {
+    "en": "{pct}% smaller",
+    "zh-CN": "体积减少 {pct}%",
+    "zh-TW": "體積減少 {pct}%",
+    "ja": "{pct}% 削減",
+    "ko": "{pct}% 감소"
+  },
+  "tag.before": {
+    "en": "Before",
+    "zh-CN": "压缩前",
+    "zh-TW": "壓縮前",
+    "ja": "圧縮前",
+    "ko": "압축 전"
+  },
+  "tag.after": {
+    "en": "After",
+    "zh-CN": "压缩后",
+    "zh-TW": "壓縮後",
+    "ja": "圧縮後",
+    "ko": "압축 후"
+  },
+  "tag.modelA": {
+    "en": "Model A",
+    "zh-CN": "模型 A",
+    "zh-TW": "模型 A",
+    "ja": "モデル A",
+    "ko": "모델 A"
+  },
+  "tag.modelB": {
+    "en": "Model B",
+    "zh-CN": "模型 B",
+    "zh-TW": "模型 B",
+    "ja": "モデル B",
+    "ko": "모델 B"
+  },
+  "empty.before": {
+    "en": "Original model",
+    "zh-CN": "原始模型",
+    "zh-TW": "原始模型",
+    "ja": "元のモデル",
+    "ko": "원본 모델"
+  },
+  "empty.after": {
+    "en": "Compressed preview",
+    "zh-CN": "压缩后预览",
+    "zh-TW": "壓縮後預覽",
+    "ja": "圧縮後のプレビュー",
+    "ko": "압축 후 미리보기"
+  },
+  "viewer.hint": {
+    "en": "Drag to rotate · Ctrl + scroll to zoom",
+    "zh-CN": "拖动旋转 · Ctrl+滚轮缩放",
+    "zh-TW": "拖曳旋轉 · Ctrl+滾輪縮放",
+    "ja": "ドラッグで回転 · Ctrl+スクロールでズーム",
+    "ko": "드래그로 회전 · Ctrl+스크롤로 확대"
+  },
+  "compare.intro": {
+    "en": "Drop two models below. Drag either viewer — the other follows with the same angle and scale, so you can compare quality side by side.",
+    "zh-CN": "把两个模型分别拖进来。拖动任意一侧旋转，另一侧会同步跟随、保持相同角度和比例，方便逐角度对比质量。",
+    "zh-TW": "將兩個模型分別拖曳進來。拖曳任一側旋轉，另一側會同步跟隨、保持相同角度與比例，方便逐角度對比品質。",
+    "ja": "2 つのモデルをドロップしてください。どちらかをドラッグすると、もう一方が同じ角度と倍率で追従するので、品質を並べて比較できます。",
+    "ko": "두 모델을 드롭하세요. 한쪽을 드래그하면 다른 쪽도 같은 각도와 배율로 따라오므로 나란히 품질을 비교할 수 있습니다."
+  },
+  "compare.dropA": {
+    "en": "Model A",
+    "zh-CN": "模型 A",
+    "zh-TW": "模型 A",
+    "ja": "モデル A",
+    "ko": "모델 A"
+  },
+  "compare.dropB": {
+    "en": "Model B",
+    "zh-CN": "模型 B",
+    "zh-TW": "模型 B",
+    "ja": "モデル B",
+    "ko": "모델 B"
+  },
+  "compare.stat.size": {
+    "en": "File size",
+    "zh-CN": "文件大小",
+    "zh-TW": "檔案大小",
+    "ja": "ファイルサイズ",
+    "ko": "파일 크기"
+  },
+  "compare.stat.tris": {
+    "en": "Triangles",
+    "zh-CN": "三角形",
+    "zh-TW": "三角形",
+    "ja": "三角形",
+    "ko": "삼각형"
+  },
+  "compare.stat.verts": {
+    "en": "Vertices",
+    "zh-CN": "顶点",
+    "zh-TW": "頂點",
+    "ja": "頂点",
+    "ko": "정점"
+  },
+  "compare.stat.textures": {
+    "en": "Textures",
+    "zh-CN": "贴图数量",
+    "zh-TW": "貼圖數量",
+    "ja": "テクスチャ数",
+    "ko": "텍스처 수"
+  },
+  "compare.reset": {
+    "en": "Reset view",
+    "zh-CN": "重置视角（回到初始角度）",
+    "zh-TW": "重設視角（回到初始角度）",
+    "ja": "視点をリセット",
+    "ko": "시점 초기화"
+  },
+  "compare.aSmaller": {
+    "en": "Model A is {pct}% smaller than B",
+    "zh-CN": "模型 A 比 B 小 {pct}%",
+    "zh-TW": "模型 A 比 B 小 {pct}%",
+    "ja": "モデル A は B より {pct}% 小さい",
+    "ko": "모델 A가 B보다 {pct}% 작습니다"
+  },
+  "compare.aLarger": {
+    "en": "Model A is {pct}% larger than B",
+    "zh-CN": "模型 A 比 B 大 {pct}%",
+    "zh-TW": "模型 A 比 B 大 {pct}%",
+    "ja": "モデル A は B より {pct}% 大きい",
+    "ko": "모델 A가 B보다 {pct}% 큽니다"
+  },
+  "compare.equal": {
+    "en": "Both models are the same size",
+    "zh-CN": "两个模型大小相同",
+    "zh-TW": "兩個模型大小相同",
+    "ja": "2 つのモデルは同じサイズです",
+    "ko": "두 모델의 크기가 같습니다"
+  },
+  "compare.waitingA": {
+    "en": "Model A not uploaded",
+    "zh-CN": "模型 A 待上传",
+    "zh-TW": "模型 A 待上傳",
+    "ja": "モデル A が未アップロード",
+    "ko": "모델 A 미업로드"
+  },
+  "compare.waitingB": {
+    "en": "Model B not uploaded",
+    "zh-CN": "模型 B 待上传",
+    "zh-TW": "模型 B 待上傳",
+    "ja": "モデル B が未アップロード",
+    "ko": "모델 B 미업로드"
+  },
+  "compare.waitingA2": {
+    "en": "A: {tris} · waiting for Model B",
+    "zh-CN": "A: {tris} · 等待模型 B",
+    "zh-TW": "A: {tris} · 等待模型 B",
+    "ja": "A: {tris} · モデル B を待機中",
+    "ko": "A: {tris} · 모델 B 대기 중"
+  },
+  "compare.waitingB2": {
+    "en": "B: {tris} · waiting for Model A",
+    "zh-CN": "B: {tris} · 等待模型 A",
+    "zh-TW": "B: {tris} · 等待模型 A",
+    "ja": "B: {tris} · モデル A を待機中",
+    "ko": "B: {tris} · 모델 A 대기 중"
+  },
+  "compare.trisVs": {
+    "en": "A: {a} vs B: {b}",
+    "zh-CN": "A: {a} vs B: {b}",
+    "zh-TW": "A: {a} vs B: {b}",
+    "ja": "A: {a} / B: {b}",
+    "ko": "A: {a} vs B: {b}"
+  },
+  "batch.dropTitle": {
+    "en": "Drop multiple GLB models here",
+    "zh-CN": "把多个 GLB 模型拖到这里",
+    "zh-TW": "將多個 GLB 模型拖曳到這裡",
+    "ja": "複数の GLB モデルをここにドロップ",
+    "ko": "여러 GLB 모델을 여기에 드롭하세요"
+  },
+  "batch.dropHint": {
+    "en": "or click to select · up to 20 files · 200 MB each",
+    "zh-CN": "或点击选择 · 可多选 · 最多 20 个 · 每个最大 200 MB",
+    "zh-TW": "或點擊選擇 · 可多選 · 最多 20 個 · 每個最大 200 MB",
+    "ja": "またはクリックして選択 · 最大 20 ファイル · 各 200 MB",
+    "ko": "또는 클릭하여 선택 · 최대 20개 · 각 200 MB"
+  },
+  "batch.start": {
+    "en": "Start batch compression",
+    "zh-CN": "开始批量压缩",
+    "zh-TW": "開始批次壓縮",
+    "ja": "一括圧縮を開始",
+    "ko": "일괄 압축 시작"
+  },
+  "batch.starting": {
+    "en": "Compressing…",
+    "zh-CN": "正在批量压缩…",
+    "zh-TW": "正在批次壓縮…",
+    "ja": "圧縮中…",
+    "ko": "압축 중…"
+  },
+  "batch.download": {
+    "en": "Download all (ZIP)",
+    "zh-CN": "打包下载全部（zip）",
+    "zh-TW": "打包下載全部（zip）",
+    "ja": "すべてダウンロード（ZIP）",
+    "ko": "전체 다운로드 (ZIP)"
+  },
+  "batch.status.pending": {
+    "en": "Waiting",
+    "zh-CN": "等待中",
+    "zh-TW": "等待中",
+    "ja": "待機中",
+    "ko": "대기 중"
+  },
+  "batch.status.working": {
+    "en": "Compressing…",
+    "zh-CN": "压缩中…",
+    "zh-TW": "壓縮中…",
+    "ja": "圧縮中…",
+    "ko": "압축 중…"
+  },
+  "batch.status.done": {
+    "en": "Done",
+    "zh-CN": "完成",
+    "zh-TW": "完成",
+    "ja": "完了",
+    "ko": "완료"
+  },
+  "batch.status.failed": {
+    "en": "Failed",
+    "zh-CN": "失败",
+    "zh-TW": "失敗",
+    "ja": "失敗",
+    "ko": "실패"
+  },
+  "batch.limit": {
+    "en": "Up to 20 models at a time — extras were ignored.",
+    "zh-CN": "一次最多上传 20 个模型，多余的已忽略。",
+    "zh-TW": "一次最多上傳 20 個模型，多餘的已忽略。",
+    "ja": "一度に最大 20 モデルまで — 超過分は無視されました。",
+    "ko": "한 번에 최대 20개 모델 — 초과분은 무시되었습니다."
+  },
+  "batch.summary": {
+    "en": "Done: {done}, failed: {failed}. Failed items are marked in red.",
+    "zh-CN": "完成 {done} 个，失败 {failed} 个（失败的已标红）。",
+    "zh-TW": "完成 {done} 個，失敗 {failed} 個（失敗的已標紅）。",
+    "ja": "完了: {done}、失敗: {failed}。失敗項目は赤で表示されます。",
+    "ko": "완료: {done}, 실패: {failed}. 실패 항목은 빨간색으로 표시됩니다."
+  },
+  "hint.min": {
+    "en": "Smallest file — best for background props you barely notice.",
+    "zh-CN": "体积最小 — 适合几乎注意不到的远景背景物。",
+    "zh-TW": "體積最小 — 適合幾乎注意不到的遠景背景物。",
+    "ja": "最小サイズ — ほとんど気づかない遠景の背景向け。",
+    "ko": "최소 용량 — 거의 눈에 띄지 않는 배경 오브젝트에 적합."
+  },
+  "hint.small": {
+    "en": "Small file — good for distant scene objects.",
+    "zh-CN": "小体积 — 适合较远的场景物体。",
+    "zh-TW": "小體積 — 適合較遠的場景物件。",
+    "ja": "小さいサイズ — 遠くのシーンオブジェクトに。",
+    "ko": "작은 용량 — 멀리 있는 장면 오브젝트에 적합."
+  },
+  "hint.balanced": {
+    "en": "Balanced — the sweet spot for most projects.",
+    "zh-CN": "均衡模式 — 大多数项目的最佳选择。",
+    "zh-TW": "均衡模式 — 大多數專案的最佳選擇。",
+    "ja": "バランス — ほとんどのプロジェクトに最適。",
+    "ko": "균형 — 대부분의 프로젝트에 최적."
+  },
+  "hint.more": {
+    "en": "More detail — edges and textures stay sharper.",
+    "zh-CN": "更多细节 — 边缘和贴图更清晰。",
+    "zh-TW": "更多細節 — 邊緣與貼圖更清晰。",
+    "ja": "より高精細 — エッジとテクスチャが鮮明に。",
+    "ko": "더 많은 디테일 — 가장자리와 텍스처가 선명합니다."
+  },
+  "hint.max": {
+    "en": "Maximum detail — for close-up viewing, larger file size.",
+    "zh-CN": "细节最多 — 适合近距离特写，文件体积较大。",
+    "zh-TW": "細節最多 — 適合近距離特寫，檔案體積較大。",
+    "ja": "最高精細 — クローズアップ向け、ファイルサイズは大きめ。",
+    "ko": "최대 디테일 — 근거리 감상용, 파일 크기는 큽니다."
+  },
+  "unit.tris": {
+    "en": "{n} triangles",
+    "zh-CN": "{n} 三角形",
+    "zh-TW": "{n} 三角形",
+    "ja": "{n} 三角形",
+    "ko": "{n} 삼각형"
+  },
+  "alert.notGlb": {
+    "en": "Please choose a .glb file.",
+    "zh-CN": "请选择 .glb 格式的模型文件。",
+    "zh-TW": "請選擇 .glb 格式的模型檔案。",
+    "ja": ".glb ファイルを選択してください。",
+    "ko": ".glb 파일을 선택하세요."
+  },
+  "alert.modelFail": {
+    "en": "Model failed to load: {msg}",
+    "zh-CN": "模型处理失败：{msg}",
+    "zh-TW": "模型處理失敗：{msg}",
+    "ja": "モデルの読み込みに失敗しました：{msg}",
+    "ko": "모델 로드 실패: {msg}"
+  },
+  "alert.parseFail": {
+    "en": "Failed to parse the model. Please make sure it is a valid GLB file.",
+    "zh-CN": "模型解析失败，请确认是有效的 GLB 文件。",
+    "zh-TW": "模型解析失敗，請確認是有效的 GLB 檔案。",
+    "ja": "モデルの解析に失敗しました。有効な GLB ファイルかご確認ください。",
+    "ko": "모델 파싱에 실패했습니다. 유효한 GLB 파일인지 확인하세요."
+  },
+  "alert.noMesh": {
+    "en": "This model has no visible geometry to preview.",
+    "zh-CN": "这个模型里没有可显示的几何体，无法预览。",
+    "zh-TW": "這個模型裡沒有可顯示的幾何體，無法預覽。",
+    "ja": "このモデルには表示できるジオメトリがありません。",
+    "ko": "이 모델에는 표시할 수 있는 지오메트리가 없습니다."
+  },
+  "alert.badSize": {
+    "en": "The model has an invalid bounding size and cannot be framed.",
+    "zh-CN": "模型尺寸异常，无法自动取景预览。",
+    "zh-TW": "模型尺寸異常，無法自動取景預覽。",
+    "ja": "モデルのサイズが不正で、表示できません。",
+    "ko": "모델 크기가 비정상적이라 표시할 수 없습니다."
+  },
+  "alert.webgl": {
+    "en": "Your browser cannot enable WebGL, so 3D preview is unavailable. Try another browser or enable hardware acceleration.",
+    "zh-CN": "当前浏览器无法启用 WebGL，无法显示 3D 预览。请更换浏览器或开启硬件加速。",
+    "zh-TW": "目前瀏覽器無法啟用 WebGL，無法顯示 3D 預覽。請更換瀏覽器或開啟硬體加速。",
+    "ja": "お使いのブラウザでは WebGL を有効にできないため、3D プレビューを表示できません。別のブラウザをお試しいただくか、ハードウェアアクセラレーションを有効にしてください。",
+    "ko": "브라우저에서 WebGL을 활성화할 수 없어 3D 미리보기를 표시할 수 없습니다. 다른 브라우저를 사용하거나 하드웨어 가속을 켜세요."
+  },
+  "alert.compressFail": {
+    "en": "Compression failed",
+    "zh-CN": "压缩失败",
+    "zh-TW": "壓縮失敗",
+    "ja": "圧縮に失敗しました",
+    "ko": "압축 실패"
+  },
+  "alert.inspectFail": {
+    "en": "Model analysis failed",
+    "zh-CN": "模型分析失败",
+    "zh-TW": "模型分析失敗",
+    "ja": "モデル解析に失敗しました",
+    "ko": "모델 분석 실패"
+  },
+  "footer.supports": {
+    "en": "Works with Three.js · Unity · Unreal · Godot",
+    "zh-CN": "兼容 Three.js / Unity / Unreal / Godot",
+    "zh-TW": "相容 Three.js / Unity / Unreal / Godot",
+    "ja": "Three.js · Unity · Unreal · Godot 対応",
+    "ko": "Three.js · Unity · Unreal · Godot 지원"
+  },
+  "seo.what.title": {
+    "en": "What is GLB Shrink — the free online GLB file compressor?",
+    "zh-CN": "GLB Shrink 是什么？",
+    "zh-TW": "GLB Shrink 是什麼？",
+    "ja": "GLB Shrink とは？",
+    "ko": "GLB Shrink란?"
+  },
+  "seo.what.body": {
+    "en": "GLB Shrink is a free online GLB file compressor and GLB file size reducer. Drag in a .glb 3D model and it optimizes GLB files with Draco mesh compression plus WebP texture conversion, typically shrinking files by 80–99% while keeping the model looking great in Three.js, Unity, Unreal Engine, Godot, and AR/VR viewers.",
+    "zh-CN": "GLB Shrink 是一款免费在线 GLB 压缩工具。拖入 .glb 三维模型后，自动应用 Draco 网格压缩和 WebP 贴图转换，通常可将文件体积减少 80–99%，同时在 Three.js、Unity、Unreal、Godot 和 AR/VR 场景中保持出色画质。",
+    "zh-TW": "GLB Shrink 是一款免費線上 GLB 壓縮工具。拖入 .glb 三維模型後，自動套用 Draco 網格壓縮與 WebP 貼圖轉換，通常可將檔案體積減少 80–99%，同時在 Three.js、Unity、Unreal、Godot 與 AR/VR 場景中維持出色畫質。",
+    "ja": "GLB Shrink は無料のオンライン GLB 圧縮ツールです。.glb の 3D モデルをドロップすると、Draco によるメッシュ圧縮と WebP テクスチャ変換を適用し、通常 80〜99% のファイルサイズ削減を実現します。Three.js、Unity、Unreal Engine、Godot、AR/VR ビューアーでも美しい表示を保ちます。",
+    "ko": "GLB Shrink는 무료 온라인 GLB 압축 도구입니다. .glb 3D 모델을 드롭하면 Draco 메시 압축과 WebP 텍스처 변환이 적용되어 보통 파일 크기를 80~99% 줄이면서 Three.js, Unity, Unreal Engine, Godot, AR/VR 뷰어에서도 뛰어난 품질을 유지합니다."
+  },
+  "seo.how.title": {
+    "en": "How to compress a GLB file",
+    "zh-CN": "如何压缩 GLB 文件",
+    "zh-TW": "如何壓縮 GLB 檔案",
+    "ja": "GLB ファイルを圧縮する方法",
+    "ko": "GLB 파일 압축 방법"
+  },
+  "seo.step1": {
+    "en": "Drop your .glb model into the compressor.",
+    "zh-CN": "把 .glb 模型拖进压缩工具。",
+    "zh-TW": "將 .glb 模型拖進壓縮工具。",
+    "ja": ".glb モデルを圧縮ツールにドロップします。",
+    "ko": ".glb 모델을 압축 도구에 드롭합니다."
+  },
+  "seo.step2": {
+    "en": "Pick a quality level — smallest, balanced, or maximum detail.",
+    "zh-CN": "选择压缩程度 — 最小体积、均衡或高保真。",
+    "zh-TW": "選擇壓縮程度 — 最小體積、均衡或高保真。",
+    "ja": "圧縮レベルを選択 — 最小サイズ、バランス、最高精細。",
+    "ko": "압축 수준을 선택 — 최소 용량, 균형, 최대 디테일."
+  },
+  "seo.step3": {
+    "en": "Compare before / after side by side, then download the optimized GLB.",
+    "zh-CN": "左右对比压缩前后效果，然后下载优化后的 GLB。",
+    "zh-TW": "左右對比壓縮前後效果，然後下載最佳化後的 GLB。",
+    "ja": "圧縮前後を並べて比較し、最適化された GLB をダウンロードします。",
+    "ko": "압축 전후를 나란히 비교한 뒤 최적화된 GLB를 다운로드하세요."
+  },
+  "seo.feat.title": {
+    "en": "Features",
+    "zh-CN": "功能特性",
+    "zh-TW": "功能特色",
+    "ja": "主な機能",
+    "ko": "주요 기능"
+  },
+  "seo.feat1": {
+    "en": "Draco geometry compression — fewer triangles, tiny files",
+    "zh-CN": "Draco 网格压缩 — 三角形精简，体积骤减",
+    "zh-TW": "Draco 網格壓縮 — 三角形精簡，體積驟減",
+    "ja": "Draco ジオメトリ圧縮 — 三角形を削減しファイルを軽量化",
+    "ko": "Draco 지오메트리 압축 — 삼각형을 줄여 파일 용량 대폭 감소"
+  },
+  "seo.feat2": {
+    "en": "WebP texture conversion — sharper images at a fraction of the size",
+    "zh-CN": "WebP 贴图转换 — 更小体积更清晰贴图",
+    "zh-TW": "WebP 貼圖轉換 — 更小體積更清晰貼圖",
+    "ja": "WebP テクスチャ変換 — より小さく鮮明なテクスチャ",
+    "ko": "WebP 텍스처 변환 — 더 작고 선명한 텍스처"
+  },
+  "seo.feat3": {
+    "en": "Side-by-side 3D preview with synced camera to verify quality",
+    "zh-CN": "同步视角 3D 对比预览，质量眼见为实",
+    "zh-TW": "同步視角 3D 對比預覽，品質眼見為憑",
+    "ja": "カメラ同期の 3D 比較プレビューで品質を確認",
+    "ko": "카메라 동기화 3D 비교 미리보기로 품질 확인"
+  },
+  "seo.feat4": {
+    "en": "Batch compression — process up to 20 models and download a ZIP",
+    "zh-CN": "批量压缩 — 一次处理 20 个模型，打包 ZIP 下载",
+    "zh-TW": "批次壓縮 — 一次處理 20 個模型，打包 ZIP 下載",
+    "ja": "一括圧縮 — 最大 20 モデルを処理し ZIP でダウンロード",
+    "ko": "일괄 압축 — 최대 20개 모델을 처리하고 ZIP으로 다운로드"
+  },
+  "seo.faq.title": {
+    "en": "FAQ",
+    "zh-CN": "常见问题",
+    "zh-TW": "常見問題",
+    "ja": "よくある質問",
+    "ko": "자주 묻는 질문"
+  },
+  "seo.faq1.q": {
+    "en": "Is GLB Shrink free to use?",
+    "zh-CN": "GLB Shrink 是免费的吗？",
+    "zh-TW": "GLB Shrink 是免費的嗎？",
+    "ja": "GLB Shrink は無料で使えますか？",
+    "ko": "GLB Shrink는 무료인가요?"
+  },
+  "seo.faq1.a": {
+    "en": "Yes — GLB Shrink is completely free right now. All three tools (compress, compare, batch) are open to everyone. In the future we may introduce optional credit packs to help cover server costs, but core compression will always have a free tier.",
+    "zh-CN": "是的 — GLB Shrink 目前完全免费，压缩、对比、批量三个功能所有人都可以免费使用。未来为了覆盖服务器成本，可能会推出可选的次数包，但核心的压缩功能会一直保留免费额度。",
+    "zh-TW": "是的 — GLB Shrink 目前完全免費，壓縮、對比、批次三個功能所有人都可以免費使用。未來為了支應伺服器成本，可能會推出可選的次數包，但核心的壓縮功能會一直保留免費額度。",
+    "ja": "はい — GLB Shrink は現在完全無料です。圧縮・比較・一括の 3 つのツールをどなたでもご利用いただけます。将来的にサーバー費用のため任意のクレジットパックを導入する可能性がありますが、基本の圧縮機能は常に無料枠を用意します。",
+    "ko": "네 — GLB Shrink는 현재 완전 무료입니다. 압축, 비교, 일괄 세 가지 도구를 누구나 무료로 사용할 수 있습니다. 향후 서버 비용을 위해 선택형 크레딧 팩을 도입할 수 있지만, 핵심 압축 기능은 항상 무료 범위를 유지합니다."
+  },
+  "seo.faq2.q": {
+    "en": "Does compression reduce 3D model quality?",
+    "zh-CN": "压缩会降低模型画质吗？",
+    "zh-TW": "壓縮會降低模型畫質嗎？",
+    "ja": "圧縮すると 3D モデルの品質は下がりますか？",
+    "ko": "압축하면 3D 모델 품질이 떨어지나요?"
+  },
+  "seo.faq2.a": {
+    "en": "You choose the trade-off. The Balanced preset keeps models visually identical for most scenes; Max detail preserves edges and textures for close-ups. Use the Compare mode to inspect quality before you download.",
+    "zh-CN": "由你决定取舍。均衡档位适合大多数场景、视觉几乎无损；高保真保留边缘和贴图细节。下载前可以用对比模式逐角度检查质量。",
+    "zh-TW": "由你決定取捨。均衡模式適合大多數場景、視覺幾乎無損；高保真保留邊緣與貼圖細節。下載前可以用對比模式逐角度檢查品質。",
+    "ja": "トレードオフは選べます。バランス設定はほとんどのシーンで見た目がほぼ変わらず、高精細はクローズアップ向けにエッジとテクスチャを保持します。ダウンロード前に比較モードで品質を確認できます。",
+    "ko": "선택에 따라 달라집니다. 균형 프리셋은 대부분의 장면에서 시각적으로 거의 동일하게 유지하고, 최대 디테일은 근거리용으로 가장자리와 텍스처를 보존합니다. 다운로드 전에 비교 모드로 품질을 확인하세요."
+  },
+  "seo.faq3.q": {
+    "en": "Are my 3D files uploaded to a server?",
+    "zh-CN": "我的模型文件会被上传吗？",
+    "zh-TW": "我的模型檔案會被上傳嗎？",
+    "ja": "3D ファイルはサーバーにアップロードされますか？",
+    "ko": "제 3D 파일이 서버에 업로드되나요?"
+  },
+  "seo.faq3.a": {
+    "en": "Files are processed for compression and are not stored, shared, or used for any other purpose. Large scenes stay private.",
+    "zh-CN": "文件仅用于压缩处理，不会被存储、分享或用于任何其他用途，项目隐私有保障。",
+    "zh-TW": "檔案僅用於壓縮處理，不會被儲存、分享或用於任何其他用途，專案隱私更有保障。",
+    "ja": "ファイルは圧縮処理にのみ使用され、保存・共有・その他の目的での利用は行いません。大きなシーンもプライベートに保たれます。",
+    "ko": "파일은 압축 처리에만 사용되며 저장, 공유 또는 다른 목적으로 사용되지 않습니다. 큰 장면도 안전하게 보호됩니다."
+  },
+  "seo.faq4.q": {
+    "en": "What formats does GLB Shrink support?",
+    "zh-CN": "GLB Shrink 支持什么格式？",
+    "zh-TW": "GLB Shrink 支援什麼格式？",
+    "ja": "対応しているフォーマットは？",
+    "ko": "어떤 형식을 지원하나요?"
+  },
+  "seo.faq4.a": {
+    "en": "Input: .glb (binary glTF). Output: optimized .glb with Draco-compressed geometry and WebP textures — fully compatible with Three.js, Unity, Unreal Engine, Godot, Blender, and most glTF runtimes.",
+    "zh-CN": "输入：.glb（二进制 glTF）。输出：Draco 网格 + WebP 贴图的优化 .glb — 完全兼容 Three.js、Unity、Unreal、Godot、Blender 及主流 glTF 运行环境。",
+    "zh-TW": "輸入：.glb（二進位 glTF）。輸出：Draco 網格 + WebP 貼圖的最佳化 .glb — 完全相容於 Three.js、Unity、Unreal、Godot、Blender 及主流 glTF 執行環境。",
+    "ja": "入力：.glb（バイナリ glTF）。出力：Draco 圧縮ジオメトリと WebP テクスチャを適用した最適化 .glb — Three.js、Unity、Unreal Engine、Godot、Blender など主要な glTF ランタイムと互換性があります。",
+    "ko": "입력: .glb(binary glTF). 출력: Draco 압축 지오메트리와 WebP 텍스처가 적용된 최적화 .glb — Three.js, Unity, Unreal Engine, Godot, Blender 및 대부분의 glTF 런타임과 호환됩니다."
+  },
+  "seo.faq5.q": {
+    "en": "Can I compress multiple GLB files at once?",
+    "zh-CN": "可以一次压缩多个 GLB 文件吗？",
+    "zh-TW": "可以一次壓縮多個 GLB 檔案嗎？",
+    "ja": "複数の GLB ファイルを一度に圧縮できますか？",
+    "ko": "여러 GLB 파일을 한 번에 압축할 수 있나요?"
+  },
+  "seo.faq5.a": {
+    "en": "Yes. The Batch tab handles up to 20 GLB files in one run and gives you a single ZIP download of all compressed models.",
+    "zh-CN": "可以。批量模式一次最多处理 20 个 GLB 文件，完成后打包成一个 ZIP 下载。",
+    "zh-TW": "可以。批次模式一次最多處理 20 個 GLB 檔案，完成後打包成一個 ZIP 下載。",
+    "ja": "はい。一括タブなら最大 20 個の GLB ファイルを一度に処理し、圧縮済みモデルを 1 つの ZIP にまとめてダウンロードできます。",
+    "ko": "네. 일괄 탭에서 최대 20개의 GLB 파일을 한 번에 처리하고 압축된 모델을 하나의 ZIP으로 다운로드할 수 있습니다."
+  },
+  "meta.title": {
+    "en": "GLB Shrink — Compress GLB File Online | GLB File Compressor",
+    "zh-CN": "GLB Shrink — 免费在线 GLB 模型压缩工具",
+    "zh-TW": "GLB Shrink — 免費線上 GLB 模型壓縮工具",
+    "ja": "GLB Shrink — 無料オンライン GLB 圧縮ツール",
+    "ko": "GLB Shrink — 무료 온라인 GLB 압축 도구"
+  },
+  "meta.description": {
+    "en": "Compress GLB files online — a fast GLB file size reducer that optimizes GLB models with Draco mesh compression and WebP textures. Shrink file size up to 99%, compare before/after in 3D, batch-process up to 20 models. Works with Three.js, Unity, Unreal and Godot.",
+    "zh-CN": "在线压缩 GLB 三维模型：Draco 网格压缩 + WebP 贴图，体积最多减少 99%。支持 3D 前后对比、批量处理 20 个模型，兼容 Three.js、Unity、Unreal、Godot。",
+    "zh-TW": "線上壓縮 GLB 三維模型：Draco 網格壓縮 + WebP 貼圖，體積最多減少 99%。支援 3D 前後對比、批次處理 20 個模型，相容 Three.js、Unity、Unreal、Godot。",
+    "ja": "GLB 3D モデルをオンラインで圧縮。Draco メッシュ圧縮と WebP テクスチャで最大 99% のサイズ削減。3D 比較プレビュー、最大 20 モデルの一括処理に対応。Three.js、Unity、Unreal、Godot で動作。",
+    "ko": "GLB 3D 모델을 온라인에서 압축하세요. Draco 메시 압축과 WebP 텍스처로 최대 99% 크기 감소. 3D 비교 프리뷰, 최대 20개 모델 일괄 처리. Three.js, Unity, Unreal, Godot 호환."
+  },
+  "seo.faq6.q": {
+    "en": "How do I reduce GLB file size online?",
+    "zh-CN": "如何在线上减小 GLB 文件体积？",
+    "zh-TW": "如何在線上減小 GLB 檔案體積？",
+    "ja": "オンラインで GLB ファイルサイズを減らすには？",
+    "ko": "온라인에서 GLB 파일 크기를 줄이는 방법은?"
+  },
+  "seo.faq6.a": {
+    "en": "Drop your .glb file into GLB Shrink, choose a compression level, and download the optimized result in seconds. It is the fastest free way to reduce GLB file size online — no software to install, no signup, and your files never leave your browser.",
+    "zh-CN": "把 .glb 文件拖进 GLB Shrink，选择压缩程度，几秒内即可下载优化结果。这是在线上减小 GLB 文件体积最快的方式——无需安装软件、无需注册，文件始终不会离开你的浏览器。",
+    "zh-TW": "將 .glb 檔案拖進 GLB Shrink，選擇壓縮程度，幾秒內即可下載最佳化結果。這是在線上減小 GLB 檔案體積最快的方式——無需安裝軟體、無需註冊，檔案始終不會離開你的瀏覽器。",
+    "ja": ".glb ファイルを GLB Shrink にドロップし、圧縮レベルを選ぶだけで数秒で最適化済みファイルをダウンロードできます。ソフトのインストールも登録も不要、ファイルがブラウザから外に出ることはありません。オンラインで GLB ファイルサイズを減らす最速の方法です。",
+    "ko": ".glb 파일을 GLB Shrink에 드롭하고 압축 수준을 선택하면 몇 초 만에 최적화된 결과를 다운로드할 수 있습니다. 소프트웨어 설치나 회원가입 없이, 파일이 브라우저 밖으로 나가지 않는 가장 빠른 온라인 GLB 파일 크기 축소 방법입니다."
+  }
+}

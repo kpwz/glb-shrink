@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://glb-shrink.q2497237260.workers.dev/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <loc>https://glb-shrink.pages.dev/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://glb-shrink.pages.dev/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://glb-shrink.pages.dev/zh-cn/" />
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://glb-shrink.pages.dev/zh-tw/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://glb-shrink.pages.dev/ja/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://glb-shrink.pages.dev/ko/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://glb-shrink.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://glb-shrink.pages.dev/ja/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://glb-shrink.pages.dev/ko/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://glb-shrink.pages.dev/zh-cn/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://glb-shrink.pages.dev/zh-tw/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

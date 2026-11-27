@@ -6,10 +6,30 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { KTX2Loader } from 'three/addons/loaders/KTX2Loader.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import JSZip from 'jszip';
-import { applyStatic, getLang, initLang, setLang, t, type Lang } from './i18n';
+import { applyStatic, detectBrowserLang, getLang, initLang, LANG_LABELS, LANG_PATH, langFromPath, t, type Lang } from './i18n';
 import { compressBufferLocal, inspectBufferLocal, resolveSettings } from './engine';
 
-initLang();
+// 语言偏好（会话级）：手动选过就尊重，避免根路径被"打回"
+const PICK_KEY = 'glb-lang-pick';
+let pickedLang: Lang | null = null;
+try {
+  const v = sessionStorage.getItem(PICK_KEY);
+  if (v === 'en' || v === 'zh-CN' || v === 'zh-TW' || v === 'ja' || v === 'ko') {
+    pickedLang = v;
+  }
+} catch {
+  /* ignore */
+}
+
+initLang(pickedLang);
+
+// 根路径：按「会话内手动选择 > 浏览器语言」自动跳转到对应语言页面（英文则留在根）
+if (!langFromPath(location.pathname)) {
+  const target = pickedLang ?? detectBrowserLang();
+  if (target !== 'en') {
+    location.replace(`${LANG_PATH[target]}${location.search}${location.hash}`);
+  }
+}
 
 function formatBytes(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`;
@@ -933,75 +953,58 @@ syncBatchPresets(50);
 batchStartBtn.addEventListener('click', () => void startBatch());
 batchDownloadBtn.addEventListener('click', () => void batchDownloadZip());
 
-// ── 语言切换 ──
+// ── 语言（由 URL 路径决定；切换即跳转到对应语言页面）──
 
-const TITLES: Record<Lang, string> = {
-  en: 'GLB Shrink — Free Online GLB Compressor | Compress 3D Models',
-  zh: 'GLB Shrink — 免费在线 GLB 模型压缩工具',
-};
+const langTrigger = document.getElementById('lang-trigger') as HTMLButtonElement;
+const langMenu = document.getElementById('lang-menu')!;
+const langCurrent = document.getElementById('lang-current')!;
 
-/** 语言切换后，把当前可见的动态文案重新渲染一遍 */
-function refreshDynamicTexts() {
-  document.title = TITLES[getLang()];
-
-  if (mode === 'compare') {
-    tagBefore.textContent = t('tag.modelA');
-    tagAfter.textContent = t('tag.modelB');
-    emptyBeforeText.textContent = t('tag.modelA');
-    emptyAfterText.textContent = t('tag.modelB');
-    heroLabel.textContent = t('hero.labelModels');
-    updateCompareHero();
-  } else {
-    tagBefore.textContent = t('tag.before');
-    tagAfter.textContent = t('tag.after');
-    emptyBeforeText.textContent = t('empty.before');
-    emptyAfterText.textContent = t('empty.after');
-    heroLabel.textContent = t('hero.labelSize');
-    if (mode === 'compress') {
-      if (lastCompressInfo) {
-        updateHero(
-          lastCompressInfo.sourceSize,
-          lastCompressInfo.outputSize,
-          lastCompressInfo.sourceTris,
-          lastCompressInfo.tris
-        );
-      } else if (lastInspectData) {
-        savingsBadge.textContent = t('hero.ready');
-        heroSub.textContent = `${formatTris(lastInspectData.tris)} · ${t('hero.pickQuality')}`;
-      }
-    }
-  }
-
-  syncPresetCards(Number(qualityInput.value));
-  syncBatchPresets(Number(batchQuality.value));
-  if (!compressBtn.hasAttribute('disabled')) {
-    compressBtn.querySelector('.btn-label')!.textContent = t('btn.compress');
-  }
-  if (!batchStartBtn.hasAttribute('disabled')) {
-    batchStartBtn.querySelector('.btn-label')!.textContent = t('batch.start');
-  }
-  if (lastInspectData) {
-    fileTrisEl.textContent = `${formatTris(lastInspectData.tris)} · ${formatBytes(lastInspectData.fileSize)}`;
-  }
-  renderStatCard('a');
-  renderStatCard('b');
-  renderBatchList();
+function closeLangMenu() {
+  langMenu.classList.remove('open');
+  langTrigger.setAttribute('aria-expanded', 'false');
 }
 
-const langBtns = document.querySelectorAll<HTMLButtonElement>('.lang-btn');
-function updateLangBtns() {
-  langBtns.forEach((b) => b.classList.toggle('active', b.dataset.lang === getLang()));
-}
-langBtns.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    setLang(btn.dataset.lang === 'zh' ? 'zh' : 'en');
-    updateLangBtns();
-    refreshDynamicTexts();
+function updateLangUI() {
+  const lang = getLang();
+  langCurrent.textContent = LANG_LABELS[lang];
+  langMenu.querySelectorAll<HTMLButtonElement>('.lang-option').forEach((btn) => {
+    const active = btn.dataset.lang === lang;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-selected', active ? 'true' : 'false');
   });
+}
+
+langTrigger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  const open = langMenu.classList.toggle('open');
+  langTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+
+langMenu.querySelectorAll<HTMLButtonElement>('.lang-option').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const lang = btn.dataset.lang as Lang | undefined;
+    if (lang && LANG_PATH[lang]) {
+      // 记录本次会话的手动选择（会话级，不长期记忆）
+      try {
+        sessionStorage.setItem(PICK_KEY, lang);
+      } catch {
+        /* ignore */
+      }
+      // 切换语言 = 跳转到该语言的独立页面（保证 URL 与语言一致，利于 SEO）
+      location.href = LANG_PATH[lang];
+    }
+    closeLangMenu();
+  });
+});
+
+// 点页面其他地方 / 按 Esc 关闭下拉
+document.addEventListener('click', () => closeLangMenu());
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLangMenu();
 });
 
 const seoYear = document.getElementById('seo-year');
 if (seoYear) seoYear.textContent = String(new Date().getFullYear());
 
 applyStatic();
-updateLangBtns();
+updateLangUI();
